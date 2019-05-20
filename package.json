@@ -1,0 +1,20 @@
+{
+  "name": "node-apps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "db.json",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "eslint": "^5.6.1"
+  },
+  "scripts": {
+    "start": "json-server db.json",
+    "lint": "eslint **/*.js",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
