@@ -5,7 +5,7 @@
   
 ### Author: Morgana Spake  
   
-### Links and Resources  
+<!-- ### Links and Resources  
 * [submission PR](http://xyz.com)
 * [back-end](http://xyz.com) (when applicable)
 * [front-end](http://xyz.com) (when applicable)
@@ -43,4 +43,4 @@ Usage Notes or examples
 * What assertions need to be / should be made?
 
 #### UML
-Link to an image of the UML for your application and response to events
+Link to an image of the UML for your application and response to events -->
