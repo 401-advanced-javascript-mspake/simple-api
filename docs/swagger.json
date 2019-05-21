@@ -1,52 +1,359 @@
 {
-  "openapi": "3.0.1",
-  "info": {
-    "title": "Core API",
-    "description": "The worlds funnest little API",
-    "version": "1.0.0"
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Mspake - Simple API",
+    "description" : "A small API with categories and products.",
+    "version" : "0.1"
   },
-  "servers": [
-    {
-      "url": "http://localhost:8080/"
-    }
-  ],
-  "paths": {
-    "/categories": {
-      "get": {
-        "description": "Get all categories",
-        "responses": {
-          "200": {
-            "description": "Returned a list of categories",
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/getAll"
+  "servers" : [ {
+    "url" : "http://localhost:3000"
+  } ],
+  "paths" : {
+    "/categories" : {
+      "get" : {
+        "description" : "Gets all entries in the category route.",
+        "responses" : {
+          "200" : {
+            "description" : "Successfully got data",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Category"
+                },
+                "examples" : {
+                  "0" : {
+                    "$ref" : "#/components/examples/Category"
+                  }
                 }
               }
             }
           }
-        }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
       },
-      "post": {
-      }
+      "post" : {
+        "description" : "Adds a new entry to categories",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Category"
+              },
+              "examples" : {
+                "0" : {
+                  "$ref" : "#/components/examples/Category"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Entry Created",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Item"
+                },
+                "examples" : {
+                  "0" : {
+                    "$ref" : "#/components/examples/Category"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost:3000"
+      } ]
     },
-    "/categories/{id}": {
-      "get": {
+    "/products" : {
+      "get" : {
+        "description" : "Gets all entries in the products route.",
+        "responses" : {
+          "200" : {
+            "description" : "Successfully got data",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Item"
+                },
+                "examples" : {
+                  "0" : {
+                    "$ref" : "#/components/examples/Item"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
       },
-      "put": {
+      "post" : {
+        "description" : "Adds a new entry to products",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Item"
+              },
+              "examples" : {
+                "0" : {
+                  "$ref" : "#/components/examples/Item"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "201" : {
+            "description" : "Entry Created",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Item"
+                },
+                "examples" : {
+                  "0" : {
+                    "$ref" : "#/components/examples/Item"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
       },
-      "delete": {
-      }
+      "servers" : [ {
+        "url" : "http://localhost:3000"
+      } ]
+    },
+    "/categories/id" : {
+      "get" : {
+        "description" : "Gets a single entry from the categories route where the id matches the id included in the url.",
+        "responses" : {
+          "200" : {
+            "description" : "Successfully got data",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Category"
+                },
+                "examples" : {
+                  "0" : {
+                    "$ref" : "#/components/examples/Category"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "put" : {
+        "description" : "Updates a single entry from the categories route where the id matches the id included in the url. Note- Be sure to include all properties and their erespective values (including _id)! Just including the property you want to update will overwrite the entire entry.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Category"
+              },
+              "examples" : {
+                "0" : {
+                  "$ref" : "#/components/examples/Category"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Entry Updated",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Category"
+                },
+                "examples" : {
+                  "0" : {
+                    "$ref" : "#/components/examples/Category"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "delete" : {
+        "description" : "Deletes an entry from the catogories route where the id matches the id included in the url.",
+        "responses" : {
+          "200" : {
+            "description" : "Entry deleted",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "object"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost:3000"
+      } ]
+    },
+    "/products/:id" : {
+      "get" : {
+        "description" : "Gets a single entry from the products route where the id matches the id included in the url.",
+        "responses" : {
+          "200" : {
+            "description" : "Successfully got data",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Item"
+                },
+                "examples" : {
+                  "0" : {
+                    "$ref" : "#/components/examples/Item"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "put" : {
+        "description" : "Updates a single entry from the products route where the id matches the id included in the url. Note- Be sure to include all properties and their erespective values (including _id)! Just including the property you want to update will overwrite the entire entry.",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Item"
+              },
+              "examples" : {
+                "0" : {
+                  "$ref" : "#/components/examples/Item"
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "Entry Updated",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Item"
+                },
+                "examples" : {
+                  "0" : {
+                    "$ref" : "#/components/examples/Item"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "delete" : {
+        "description" : "Deletes an entry from the products route where the id matches the id included in the url.",
+        "responses" : {
+          "200" : {
+            "description" : "Entry deleted",
+            "content" : {
+              "application/json; charset=utf-8" : {
+                "schema" : {
+                  "type" : "object"
+                },
+                "examples" : { }
+              }
+            }
+          }
+        },
+        "servers" : [ {
+          "url" : "http://localhost:3000"
+        } ]
+      },
+      "servers" : [ {
+        "url" : "http://localhost:3000"
+      } ]
     }
   },
-  "components": {
-    "schemas": {
-      "getAll": {
-        "type": "object",
-        "example": [
-          "{}",
-          "{}"
-        ]
+  "components" : {
+    "schemas" : {
+      "Category" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "_id" : {
+            "type" : "integer"
+          },
+          "display_name" : {
+            "type" : "string"
+          }
+        }
+      },
+      "Item" : {
+        "type" : "object",
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "category" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "_id" : {
+            "type" : "integer"
+          },
+          "display_name" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "examples" : {
+      "Category" : {
+        "value" : "    {\n      \"name\": \"books\",\n      \"display_name\": \"Books\",\n      \"description\": \"A bunch of books\",\n      \"_id\": 3\n    }"
+      },
+      "Item" : {
+        "value" : "    {\n      \"name\": \"red\",\n      \"category\": \"colors\"\n      \"display_name\": \"Red\",\n      \"description\": \"The color red\",\n      \"_id\": 1\n    }"
       }
     }
   }

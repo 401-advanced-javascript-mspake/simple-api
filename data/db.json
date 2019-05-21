@@ -1,0 +1,53 @@
+{
+  "categories": [
+    {
+      "name": "colors",
+      "display_name": "Colors",
+      "description": "An assortment of colors",
+      "_id": 1
+    },
+    {
+      "name": "fuzzy",
+      "display_name": "Small Fuzzy Creatures",
+      "description": "A bunch of small fuzzy creatures",
+      "_id": 2
+    }
+  ],
+  "products": [
+    {
+      "name": "amber",
+      "display_name": "Amber",
+      "category": "colors",
+      "description": "The color amber",
+      "_id": 1
+    },
+    {
+      "name": "bunnies",
+      "display_name": "Bunnies",
+      "category": "fuzzy",
+      "description": "Long eared, puff tailed, like vegetables",
+      "_id": 2
+    },
+    {
+      "name": "tribbles",
+      "display_name": "Tribbles",
+      "category": "fuzzy",
+      "description": "Trouble!!",
+      "_id": 3
+    },
+    {
+      "name": "green",
+      "category": "colors",
+      "display_name": "Green",
+      "description": "The color green",
+      "_id": 4
+    },
+    {
+      "name": "blue",
+      "display_name": "Blue",
+      "category": "colors",
+      "description": "The color blue",
+      "_id": 5
+    }
+  ]
+}
