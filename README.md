@@ -5,42 +5,27 @@
   
 ### Author: Morgana Spake  
   
-<!-- ### Links and Resources  
-* [submission PR](http://xyz.com)
-* [back-end](http://xyz.com) (when applicable)
-* [front-end](http://xyz.com) (when applicable)
-
-#### Documentation
-* [api docs](http://xyz.com) (API servers)
-* [jsdoc](http://xyz.com) (Server assignments)
-* [styleguide](http://xyz.com) (React assignments)
-
-### Modules
-#### `modulename.js`
-##### Exported Values and Methods
-
-###### `foo(thing) -> string`
-Usage Notes or examples
-
-###### `bar(array) -> array`
-Usage Notes or examples
-
-### Setup
-#### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
-
-#### Running the app
-* `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+### Links and Resources  
+* [submission PR](https://github.com/401-advanced-javascript-mspake/simple-api/pull/1)  
+* [react-app](https://11fnt.codesandbox.io/)  
   
-#### Tests
-* How do you run tests?
-* What assertions were made?
-* What assertions need to be / should be made?
-
-#### UML
-Link to an image of the UML for your application and response to events -->
+#### Documentation  
+* [Swagger api docs](https://app.swaggerhub.com/apis-docs/MSpake/simple-api/0.1)  
+  
+### Setup  
+#### `.env` requirements  
+* `PORT` - 3000  
+  
+#### Running the app  
+* `npm start` or `json-server --watch --id _id ./data/db.json`  
+* Endpoint: `/categories`  
+  * Returns a JSON object with all entries accessible via the categories route in it.  
+* Endpoint: `/products`  
+  * Returns a JSON object with all entries accessible via the categories route in it.  
+  * Endpoint: `/categories/:id`  
+  * Returns a JSON object with a singular entry from the categories route where the id matches the id included in the url.  
+* Endpoint: `/products/:id`
+  * Returns a JSON object with a singular entry from the products route where the id matches the id included in the url.  
+  
+#### UML  
+![uml](https://github.com/401-advanced-javascript-mspake/simple-api/blob/master/assets/20190520_145029.jpg)  
